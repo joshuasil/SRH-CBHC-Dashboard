@@ -29,7 +29,7 @@ postgres_str = get_postgres_str()
 ## Create the Connection
 engine = create_engine(postgres_str, echo=False)
 conn = engine.connect()
-sql_select_query = text('''SELECT * FROM public.srh_bvh_logs;''')
+sql_select_query = text('''SELECT * FROM public.srh_cbhc_logs;''')
 sqlresult = conn.execute(sql_select_query)
 df_comp = pd.DataFrame(sqlresult.fetchall())
 df_comp.columns = sqlresult.keys()
@@ -124,7 +124,7 @@ cards_global = [
 navbar = dbc.NavbarSimple(
     children=[html.Img(src=clinic_logo,height='40px'),
     ],
-    brand="Clinic Chat - Boulder Valley Health - Sexual Reproductive Health Chatbot Dashboard",
+    brand="Clinic Chat - Colorado Black Health Collaborative - Sexual Reproductive Health Chatbot Dashboard",
     brand_href="#",
     color="primary",
     dark=True,
