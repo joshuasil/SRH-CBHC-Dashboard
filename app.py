@@ -51,7 +51,8 @@ unique_users, tot_questions, avg_mess_per_user, minimum_mess_per_user, maximum_m
 
 
 covid_logo = Image.open('COVID_chatbot_logo.png')
-clinic_logo = Image.open('clinic chat logo.jpg')
+clinic_logo = Image.open('logo.png')
+clinic_logo = clinic_logo.convert('RGB')
 
 fig_acc_time = get_fig_acc_time(df_comp)
 fig_cum_total_by_date = get_fig_cum_total_by_date(df_comp)
@@ -183,4 +184,4 @@ def date_cum_count_media_type(begin_date, end_date):
     return [unique_users, tot_questions, avg_mess_per_user, minimum_mess_per_user, maximum_mess_per_user, avg_accuracy, fig_acc_time, fig_cum_total_by_date, fig_intent, fig_browser]
 
 if __name__ == '__main__':
-    app.run_server(host="localhost", port=8080,debug=False)
+    app.run_server(host="localhost", port=8070,debug=False)
